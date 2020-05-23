@@ -24,6 +24,7 @@ passport.use(
         clientSecret: keys.googleClientSecret,
         // Adding route to redirect user after auth has been approved
         callbackURL: '/auth/google/callback', 
+        proxy: true
         // adding final argument to method 
     }, (accessToken, refreshToken, profile, done) => {
         // check to see if we have a user in db already:
