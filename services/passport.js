@@ -26,20 +26,18 @@ passport.use(
         callbackURL: '/auth/google/callback', 
         proxy: true
         // adding final argument to method 
-    }, (accessToken, refreshToken, profile, done) => {
+    }, async (accessToken, refreshToken, profile, done) => {
         // check to see if we have a user in db already:
-        User.findOne({googleId: profile.id})
-        .then((existingUser) => {
-            if (existingUser) {
-                // return cookie
-                // calling done to end function
-                done(null, existingUser)
-            } else {
-                // saving a new user and returning a cookie:
-                new User({ googleId: profile.id }).save()
-                // calling done to end function 
-                .then(user => done(null, user))
-            }
-        })
+        const existingUser = await User.findOne({googleId: profile.id})
+        if (existingUser) {
+            // return cookie
+            // calling done to end function
+            done(null, existingUser)
+        } else {
+            // saving a new user and returning a cookie:
+            const user = await new User({ googleId: profile.id }).save()
+            // calling done to end function 
+            done(null, user);
+        }
     })
 );
