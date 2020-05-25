@@ -10,8 +10,9 @@ require('./models/User');
 require('./services/passport');
 
 mongoose.connect(config.mongoURI, {
-    useUnifiedTopology: true,
     useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
 });
 
 const app = express();

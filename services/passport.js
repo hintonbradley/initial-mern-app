@@ -9,13 +9,13 @@ const User = mongoose.model('users');
 passport.serializeUser((user, done) => {
     // (using user.id to get Mongo db generated id for user instance)
     done(null, user.id);
-})
+});
 
 passport.deserializeUser((id, done) => {
-    User.findById(id).then(user => {
+    User.findById(id).then((user) => {
         done(null, user);
     });
-});
+ });
 
 // creating an instance of the passport strategy
 passport.use(
