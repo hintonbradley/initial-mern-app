@@ -18,8 +18,8 @@ class App extends Component {
     render () {
         return (
             <div className="container">
-                <Nav />
                 <BrowserRouter>
+                    <Nav />
                     <Route path="/" exact component={Home}/>
                     <Route path="/surveys" exact component={Dashboard}/>
                     <Route path="/surveys/new" component={SurveyNew}/>
