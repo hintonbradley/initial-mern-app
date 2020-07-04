@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Payments from './Payments';
 
 class Nav extends Component {
     renderGoogleBtn () {
@@ -11,7 +12,10 @@ class Nav extends Component {
             case false:
                 return <li><a href="/auth/google">Login With Google</a></li>
             default:
-                return <li><a href="/api/logout">Logout</a></li>
+                return [
+                    <li key="payments-link"><Payments/></li>,
+                    <li key="logout-link"><a href="/api/logout">Logout</a></li>
+                ]
         }
     }
 
