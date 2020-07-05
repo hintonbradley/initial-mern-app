@@ -7,7 +7,6 @@ const config = require('./config/keys');
 
 // first: defning the users model before taking action on it:
 require('./models/User');
-
 require('./services/passport');
 
 mongoose.connect(config.mongoURI, {
