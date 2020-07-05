@@ -14,6 +14,7 @@ class Nav extends Component {
             default:
                 return [
                     <li key="payments-link"><Payments/></li>,
+                    <li key="credits" style={{margin: '0 10px'}}>Credits: {this.props.auth.credits}</li>,
                     <li key="logout-link"><a href="/api/logout">Logout</a></li>
                 ]
         }
