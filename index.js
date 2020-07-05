@@ -9,6 +9,7 @@ const config = require('./config/keys');
 require('./models/User');
 require('./services/passport');
 
+
 mongoose.connect(config.mongoURI, {
     useNewUrlParser: true,
     useCreateIndex: true,
