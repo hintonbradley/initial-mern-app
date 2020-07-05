@@ -5,7 +5,6 @@ import Payments from './Payments';
 
 class Nav extends Component {
     renderGoogleBtn () {
-        console.log(this.props.auth)
         switch (this.props.auth) {
             case null:
                 return "Loading..."
@@ -38,7 +37,6 @@ class Nav extends Component {
 
 // destructuring auth from Redux state object:
 function mapStateToProps ({ auth }) {
-    console.log('auth is: ', auth)
     return { auth }
 }
 
