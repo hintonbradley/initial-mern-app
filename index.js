@@ -7,6 +7,7 @@ const config = require('./config/keys');
 
 // first: defning the users model before taking action on it:
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 
@@ -33,6 +34,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 // to only be run in prod served on Heroku:
 if(process.env.NODE_ENV === 'production') {
