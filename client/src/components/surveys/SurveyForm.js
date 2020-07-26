@@ -11,7 +11,7 @@ class SurveyForm extends Component {
                 <Field label="Survey title" type="text" name="title" component={SurveyField} />
                 <Field label="Subject line" type="text" name="subject" component={SurveyField} />
                 <Field label="Survey body" type="text" name="body" component={SurveyField} />
-                <Field label="Recipient list" type="text" name="emails" component={SurveyField} />
+                <Field label="Recipient list" type="text" name="recipients" component={SurveyField} />
             </div>
         )
     }
@@ -53,8 +53,8 @@ function validate(values) {
         errors.body = 'You must provide a body';
     }
 
-    if (!values.emails) {
-        errors.emails = 'You must provide email(s)';
+    if (!values.recipients) {
+        errors.recipients = 'You must provide email(s)';
     }
 
     return errors;
