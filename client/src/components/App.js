@@ -7,7 +7,7 @@ import * as actions from '../actions';
 import Nav from './Nav';
 import Home from './Home';
 import Dashboard from './Dashboard';
-import SurveyNew from './SurveyNew';
+import SurveyNew from './surveys/SurveyNew';
 
 class App extends Component {
 
