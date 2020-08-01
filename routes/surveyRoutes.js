@@ -67,8 +67,7 @@ module.exports = app => {
         console.log('SURVEY IS : ', survey);
         console.log('REQ.USER IS : ', req.user)
         try {
-            console.log('AWAIT MAILDER.SEND IS : ', await mailer.send())
-            // await mailer.send();
+            await mailer.send();
             await survey.save();
             req.user.credits -=1;
             const user = await req.user.save();
