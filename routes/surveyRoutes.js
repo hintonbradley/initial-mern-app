@@ -62,7 +62,10 @@ module.exports = app => {
         })
 
         const mailer = new Mailer(survey, surveyTemplate(survey));
-
+        
+        console.log('MAILER IS : ', mailer);
+        console.log('SURVEY IS : ', survey);
+        console.log('REQ.USER IS : ', req.user)
         try {
             await mailer.send();
             await survey.save();
